@@ -1,0 +1,24 @@
+{
+  "name": "heart-disease-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "Gabe Christiansen",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4"
+  },
+  "devDependencies": {
+    "chalk": "^2.4.2",
+    "morgan": "^1.9.1",
+    "nodemon": "^1.18.10"
+  }
+}
