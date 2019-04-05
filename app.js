@@ -2,12 +2,14 @@ const express = require('express');
 const app = express();
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const predictRoute = require('./routes/predict');
 
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(express.json());
+app.use(cors());
 
 app.use('/api/predict', predictRoute);
 
