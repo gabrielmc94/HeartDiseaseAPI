@@ -46,10 +46,14 @@ router.get('/', async (req, res, next) => {
         'Access-Control-Allow-Origin': "*"
     }).then(result => {
         console.log(result);
-        res.status(200).json(result);
+        res.status(200).json({
+            something: "boom"
+        });
     }).catch(err => {
         console.log(err)
-        res.status(400).json(err)
+        res.status(400).json({
+            something: "wrong"
+        })
     });
     
 });
