@@ -9,6 +9,8 @@ const baseUrl = "https://ussouthcentral.services.azureml.net/workspaces/2587f003
 
 router.post('/', async (req, res, next) => {
 
+    console.log(req.body)
+
     const options = {
         method: "POST",
         url: baseUrl,
@@ -43,10 +45,10 @@ router.post('/', async (req, res, next) => {
                             req.body.systolic, 
                             req.body.diastolic, 
                             req.body.cholesterol, 
-                            req.body.glucose,
+                            req.body.gluc,
                             req.body.smoke,
                             req.body.alcohol,
-                            req.body.yCardio,
+                            req.body.active,
                             "0"
                         ]
                     ]
@@ -61,7 +63,7 @@ router.post('/', async (req, res, next) => {
                 message: "error"
             })
         } else {
-            console.log("yay")
+            console.log(body)
             res.status(200).json({
                 message: body
             })
