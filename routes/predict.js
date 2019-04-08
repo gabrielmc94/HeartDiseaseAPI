@@ -7,7 +7,7 @@ const request = require('request');
 const API_KEY = "OV/4V+9Q7ku/pZ5Z6XceSuIE9uW0GewU3U15mxJ2sPrVGPTukDZ1kxoB+kNya7vgcDI85GTtPeagkaK1d3RwNg==";
 const baseUrl = "https://ussouthcentral.services.azureml.net/workspaces/2587f003fd46485290f7579289343e2f/services/90c8b9b2e64f462498a0022f3ca9991f/execute?api-version=2.0&details=true";
 
-router.get('/', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
 
     const options = {
         method: "POST",
@@ -34,7 +34,22 @@ router.get('/', async (req, res, next) => {
                         "active",
                         "yCardio",
                     ],
-                    Values: [["18875", "171", "29", "110", "70", "2", "1", "0", "0", "1", "0"]],
+                    // Values: [["18875", "171", "29", "110", "70", "2", "1", "0", "0", "1", "0"]],
+                    Values: [
+                        [
+                            req.body.age, 
+                            req.body.height, 
+                            req,body.weight, 
+                            req.body.systolic, 
+                            req.body.diastolic, 
+                            req.body.cholesterol, 
+                            req.body.glucose,
+                            req.body.smoke,
+                            req.body.alcohol,
+                            req.body.yCardio,
+                            "0"
+                        ]
+                    ]
                 },
             },
         }),
