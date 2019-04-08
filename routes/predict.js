@@ -39,7 +39,7 @@ router.post('/', async (req, res, next) => {
                         [
                             req.body.age, 
                             req.body.height, 
-                            req,body.weight, 
+                            req.body.weight, 
                             req.body.systolic, 
                             req.body.diastolic, 
                             req.body.cholesterol, 
@@ -61,7 +61,7 @@ router.post('/', async (req, res, next) => {
                 message: "error"
             })
         } else {
-            console.log(body)
+            console.log("yay")
             res.status(200).json({
                 message: body
             })
