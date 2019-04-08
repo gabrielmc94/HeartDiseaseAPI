@@ -13,6 +13,12 @@ app.use(cors());
 
 app.use('/api/predict', predictRoute);
 
+app.get('/', (req, res, next) => {
+    res.status(200).json({
+        hey: "uh oh"
+    })
+})
+
 app.use((req, res, next) => {
     const error = new Error('Not Found');
     error.status = 404;
